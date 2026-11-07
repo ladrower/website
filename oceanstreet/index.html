@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
     <title>Oceanstreet</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            loadTracks();
+        }
+    </script>
+    <style>
+        body {
+            background: #054681;
+        }
+    </style>
 </head>
 <body>
-<h1>hello oceanstreet</h1>
+<a class="back-ref" href="../">back</a>
+<div class="welcome-container">
+    <h1>welcome to the oceanstreet</h1>
+    <p>here are some albums to explore:</p>
+    <ul>
+        <li>
+            <a href="./album-1">album 1</a>
+        </li>
+    </ul>
+    <p>or maybe listen to some soundscapes:</p>
+    <ul>
+        <li><a onclick="playTrack('JAPANGARDEN')">Japanese Garden</a></li>
+        <li><a onclick="playTrack('THUNDER')">Distant Thunder</a></li>
+        <li><a onclick="playTrack('IRISHCOAST')">Irish Coast</a></li>
+        <li><a onclick="playTrack('WATERFALL2')">The Falls</a></li>
+        <li><a onclick="playTrack('PEBBLEBEACH')">Pebble Beach</a></li>
+    </ul>
+</div>
+
+<div class="player-overlay" style="display: none">
+    <div class="player-overlay-background"></div>
+    <div class="pause-button" onclick="stopAllTracks()">
+        STOP
+    </div>
+</div>
+
 </body>
 </html>
