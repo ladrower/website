@@ -5,7 +5,7 @@ body {
     color: antiquewhite;
 }
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #c0ceff;
     cursor: pointer;
 }
