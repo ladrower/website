@@ -19,7 +19,7 @@
                     const audio = document.createElement("audio");
                     audio.src = `https://mynoise.world/Data/${trackName}/${i}${side}.ogg`;
                     audio.preload = "none";
-                    audio.volume = 0.2;
+                    audio.volume = 0.8;
                     audio.loop = true;
 
                     const bg = document.createElement("img");
