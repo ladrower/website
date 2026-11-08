@@ -1,4 +1,29 @@
 ((w) => {
+    "utils module";
+
+    w.scrollToTop = scrollToTop;
+    w.h = h;
+    w.unlocked = _ => new URLSearchParams(window.location.search).get(_) === h(document.location.pathname.split("/").at(-2));
+
+    function scrollToTop() {
+        w.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
+    }
+
+    function h(__) {
+        let _ = 0;
+        for (const ___ of __) {
+            _ = (_ << 5) - _ + ___.charCodeAt(0);
+            _ |= 0;
+        }
+        return _.toString(16);
+    }
+})(window);
+
+((w) => {
     "music module";
 
     w.loadTracks = loadTracks;
@@ -69,25 +94,25 @@
 })(window);
 
 ((w) => {
-    "utils module";
-
-    w.scrollToTop = scrollToTop
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-        });
-    }
-})(window);
-
-((w) => {
     "gallery module";
 
-    document.querySelectorAll('.gallery img').forEach(img =>
-        img.addEventListener('click', () => {
-            img.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
-        })
-    );
+    w.displayImages = displayImages;
+
+    function displayImages(_) {
+        if (unlocked('key')) {
+            const images = document.querySelector('.gallery-images');
+            _.forEach((pic) => {
+                const img = document.createElement('img');
+                img.src = `https://live.staticflickr.com/65535/${pic}.jpg`;
+                addAligner(img);
+                images.appendChild(img);
+            });
+        }
+    }
+
+    function addAligner(img) {
+        img.addEventListener('click', () => img.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' }));
+    }
+
+    document.querySelectorAll('.gallery img').forEach(addAligner);
 })(window);

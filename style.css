@@ -32,8 +32,10 @@ li {
 
 
 /* gallery module */
-.gallery img {
-    min-height: 50vh;
+body.gallery {
+    background: #404040;
+}
+.gallery-images img {
     max-width: calc(100% - 80px);
     max-height: calc(100vh - 20px - 100px);
     margin: 50px auto 80px auto;
@@ -42,7 +44,7 @@ li {
 }
 .bottom {
     font-weight: bold;
-    margin-top: 50vh;
+    margin-top: 90vh;
     margin-bottom: 100px;
     text-align: center;
 }
